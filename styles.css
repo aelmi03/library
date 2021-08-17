@@ -1,0 +1,75 @@
+:root{
+    --title-color:black;
+    --button-color:black;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+.wrapper{
+    width:100vw;
+    height:100vh;
+    background-image: url("library.jpg");
+}
+
+header{
+    position: relative;
+    width:300px;
+    height: 80px;
+    font-size: 5em;
+    text-align: center;
+    margin:auto;
+    padding:10px 0px 0px 0px; 
+}
+h1{
+    color:white;
+    font-weight:920;
+}
+
+.addBook{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom:0;
+    right:0;
+    color:black;
+    width:100px;
+    height:100px;
+    clip-path: circle(50% at 50% 50%);
+    background-color: wheat;
+    margin:0px 10px 10px 0px;
+    z-index: 1;
+}
+
+.addBook::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+    z-index: -1;
+    border-radius: 50px;
+    background-color: rgb(255, 154, 2);
+
+}
+
+.addBook:hover::before{
+    transform: scale(1);
+}
+
+.addBook:hover .addButton{
+    color:white;
+}
+
+.addButton{
+    color:var(--button-color);
+    background-color: transparent;
+    border:none;
+    font-size: 4em;
+    transition: color 0.2s ease-in-out;
+}
