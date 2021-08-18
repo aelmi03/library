@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
 :root{
     --title-color:black;
     --button-color:black;
 }
-
+*{
+    font-family: 'Playfair Display', sans-serif;
+}
 body{
     margin:0;
     padding:0;
+    width:100vh;
+    height:110vh;
 }
+
 .wrapper{
     width:100vw;
-    height:100vh;
+    height:100%;
     background-image: url("library.jpg");
 }
 
@@ -26,7 +32,42 @@ h1{
     color:white;
     font-weight:920;
 }
+input[type = "checkbox"]{
+    position: relative;
+    width:30px;
+    height:25px;
+    margin-bottom: 10px;
+}
 
+input[type = "text"], input[type = "number"]{
+    position: relative;
+    margin-bottom: 10px;
+    width:140px;
+    height:20px;
+    font-size:1.1em;
+    border-radius: 5px;
+}
+
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top:20%;
+    left:35%;
+    z-index:2;
+    height:500px;
+    width:400px;
+    background-color: rgb(207, 158, 93);
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px;
+    transition: transform .8s ease-in forwards;
+}
+
+label{
+    font-size: 1.5em;
+}
 .addBook{
     display:flex;
     align-items: center;
@@ -54,7 +95,7 @@ h1{
     transition: transform 0.2s ease-in-out;
     z-index: -1;
     border-radius: 50px;
-    background-color: rgb(255, 154, 2);
+    background-color: rgb(69, 2, 255);
 
 }
 
@@ -73,3 +114,107 @@ h1{
     font-size: 4em;
     transition: color 0.2s ease-in-out;
 }
+
+.booksHolder{
+    margin:auto;
+    margin-top: 100px;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 250px);
+    width:1200px;
+    gap:15px;
+    min-height: 400px;
+    background-color: rgb(97, 65, 5);
+}
+
+.book{
+    
+    display:flex;
+    box-shadow: black 2px 2px 2px;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width:250px;
+    text-align: center;
+    height:400px;
+    background-color: wheat;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in;
+}
+.book:hover{
+    transform: scale(1.05);
+}
+h2{
+    font-size: 1.8em;
+}
+h3{
+    font-size: 1.5em;
+}
+
+.cardButton{
+    font-size: 1.7em;
+    text-align: center;
+    width:150px;
+    height:40px;
+    border-radius: 5px;
+    position:relative;
+    z-index: 1;
+
+}
+.read::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in-out;
+    z-index: -1;
+    transform-origin: left;
+    border-radius: 5px;
+    background-color: rgb(0, 225, 255);
+
+}
+.read:hover::before{
+    transform:scaleX(1);
+    
+}
+
+.read{
+    background-color: rgb(33, 189, 173);
+    transition: color 0.4s ease-in-out;
+
+}
+.read:hover{
+    color:white;
+}
+
+.delete{
+    background-color: tomato;
+    transition: color 0.4s ease-in-out;
+}
+.delete::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in-out;
+    z-index: -1;
+    transform-origin: left;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+}
+.delete:hover::before{
+    transform:scaleX(1);
+    
+}
+.delete:hover{
+    color:white;
+}
+
+
+
