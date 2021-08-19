@@ -146,11 +146,14 @@ label{
 }
 h2{
     font-size: 1.8em;
+    color:rgb(97, 7, 78)
 }
 h3{
     font-size: 1.5em;
 }
-
+#addABookHeader{
+    color:rgb(66, 65, 61)
+}
 .cardButton{
     font-size: 1.7em;
     text-align: center;
