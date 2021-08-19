@@ -6,13 +6,11 @@ const hasReadCheckBox = document.querySelector(`input[type = "checkbox"]`);
 const form = document.querySelector("form");
 const submitButton = document.querySelector("#submit");
 const booksHolder = document.querySelector(".booksHolder");
-console.log(booksHolder);
 submitButton.addEventListener("click", getInformationFromForm);
 form.style.cssText = "transform:scale(0);";
 addButton.addEventListener("click", popUp);
-console.log(addButton);
 let library = [];
-console.log(checkIfAnyFieldIsEmpty())
+library.forEach(book => displayNewBook(book));
 function checkIfAnyFieldIsEmpty(){
     if(titleTextArea.checkValidity() && authorTextArea.checkValidity() && pagesTextArea.checkValidity()){
         return false;
@@ -26,7 +24,6 @@ function getInformationFromForm(){
     addBookToLibrary(titleTextArea.value, authorTextArea.value, pagesTextArea.value, hasReadCheckBox.checked);
     form.style.cssText = "transform: scale(0)";
     resetForm();
-    console.table(library);  
 }
 function resetForm(){
     titleTextArea.value = "";
@@ -35,11 +32,10 @@ function resetForm(){
     hasReadCheckBox.checked = false;
 }
 function popUp(){
-    if(form.style.cssText === "transform: scale(0);"){
-        form.style.cssText = "transform: scale(1);";
-    }
-    else{
-        form.style.cssText = "transform: scale(0);"
+    let value = 0.00000001;
+    while(value < 1){
+        value += value;
+        form.style.cssText = `transform: scale(${value})`
     }
 }
 
@@ -47,6 +43,7 @@ function addBookToLibrary(title,author,pages,hasRead){
     const newBook = new Book(title,author,pages,hasRead);
     library.push(newBook);
     displayNewBook(newBook);
+    
 }
 
 function displayNewBook(book){
@@ -76,28 +73,29 @@ function displayNewBook(book){
 
 }
 function editBook(e){
+    if(e.target.classList.contains("book")) return;
     const parentDiv = e.target.parentNode;
+    const bookObject = findObjectFromBookDiv(parentDiv);
     if(e.target.classList.contains("delete")){
-      //  deleteBook();
-     
-      const bookObject = findObjectFromBookDiv(parentDiv);
       removeFromLibrary(bookObject);
       e.target.parentNode.parentNode.removeChild(e.target.parentNode);
-     
     }
     else if(e.target.classList.contains("read")){
-        //changeReadStaus();
-        console.log("EDITING");
-        console.log(e.target);
+        changeReadStaus(bookObject);
+        e.target.textContent = changeReadCheckBoxText(bookObject.hasRead);
+       
     }
 }
-function removeFromLibrary(book){
-    
+function changeReadStaus(book){
+    if(book.hasRead){
+        book.hasRead = false;
+        return;
+    }
+    book.hasRead = true;
+}
+function removeFromLibrary(book){   
     for(let i = 0; i < library.length; i++){
-        console.log(library[i].title);
-        console.log(library[i].author);
         if(library[i] === book){
-            console.log("WEE DELETING");
             library.splice(i,1);
         }
     }

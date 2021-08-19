@@ -62,9 +62,8 @@ form{
     background-color: rgb(207, 158, 93);
     border-radius: 10px;
     box-shadow: black 2px 2px 2px;
-    transition: transform .8s ease-in forwards;
+    transform: scale(0);
 }
-
 label{
     font-size: 1.5em;
 }
@@ -124,7 +123,6 @@ label{
     width:1200px;
     gap:15px;
     min-height: 400px;
-    background-color: rgb(97, 65, 5);
 }
 
 .book{
