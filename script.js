@@ -72,7 +72,43 @@ function displayNewBook(book){
     bookDiv.appendChild(readButton);
     bookDiv.appendChild(deleteButton);
     booksHolder.appendChild(bookDiv);
+    bookDiv.addEventListener("click", editBook);
 
+}
+function editBook(e){
+    const parentDiv = e.target.parentNode;
+    if(e.target.classList.contains("delete")){
+      //  deleteBook();
+     
+      const bookObject = findObjectFromBookDiv(parentDiv);
+      removeFromLibrary(bookObject);
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+     
+    }
+    else if(e.target.classList.contains("read")){
+        //changeReadStaus();
+        console.log("EDITING");
+        console.log(e.target);
+    }
+}
+function removeFromLibrary(book){
+    
+    for(let i = 0; i < library.length; i++){
+        console.log(library[i].title);
+        console.log(library[i].author);
+        if(library[i] === book){
+            console.log("WEE DELETING");
+            library.splice(i,1);
+        }
+    }
+}
+function findObjectFromBookDiv(div){
+    const text = div.firstChild.textContent;
+    for(let i = 0; i < library.length; i++){
+        if(library[i].title === text){
+            return library[i];
+        }
+    }
 }
 function changeReadCheckBoxText(result){
     if(result === false){
