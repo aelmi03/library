@@ -7,7 +7,9 @@ const form = document.querySelector("form");
 const submitButton = document.querySelector("#submit");
 const booksHolder = document.querySelector(".booksHolder");
 submitButton.addEventListener("click", getInformationFromForm);
+const warningText = document.querySelector("p");
 form.style.cssText = "transform:scale(0);";
+const blurs = document.querySelector(".blur");
 addButton.addEventListener("click", popUp);
 let library = [];
 library.forEach(book => displayNewBook(book));
@@ -19,10 +21,13 @@ function checkIfAnyFieldIsEmpty(){
 }
 function getInformationFromForm(){
     if(checkIfAnyFieldIsEmpty() === true){
+        warningText.style.cssText = "display: block";
        return;
     }  
     addBookToLibrary(titleTextArea.value, authorTextArea.value, pagesTextArea.value, hasReadCheckBox.checked);
+    warningText.style.cssText = "display:none";
     form.style.cssText = "transform: scale(0)";
+    blurs.style.cssText = "opacity: 0";
     resetForm();
 }
 function resetForm(){
@@ -32,10 +37,14 @@ function resetForm(){
     hasReadCheckBox.checked = false;
 }
 function popUp(){
-    let value = 0.00000001;
-    while(value < 1){
-        value += value;
-        form.style.cssText = `transform: scale(${value})`
+    if(form.style.cssText === "transform: scale(0);"){
+        form.style.cssText = "transform: scale(1);";
+        blurs.style.cssText = "opacity: 0.7"
+
+    }
+    else{
+        form.style.cssText = "transform: scale(0);"
+        blurs.style.cssText = "opacity: 0";
     }
 }
 

@@ -10,7 +10,8 @@ body{
     margin:0;
     padding:0;
     width:100vh;
-    height:110vh;
+    height:100vh;
+    z-index: 0;
 }
 
 .wrapper{
@@ -29,14 +30,18 @@ header{
     padding:10px 0px 0px 0px; 
 }
 h1{
-    color:white;
-    font-weight:920;
+    color:rgb(233, 218, 233);
+     font-weight:920;
 }
 input[type = "checkbox"]{
     position: relative;
     width:30px;
     height:25px;
     margin-bottom: 10px;
+}
+p{
+    color:red;
+    display: none;
 }
 
 input[type = "text"], input[type = "number"]{
@@ -56,9 +61,10 @@ form{
     position: absolute;
     top:20%;
     left:35%;
-    z-index:2;
+    z-index:4;
     height:500px;
     width:400px;
+    padding:0px 10px;
     background-color: rgb(207, 158, 93);
     border-radius: 10px;
     box-shadow: black 2px 2px 2px;
@@ -80,7 +86,7 @@ label{
     clip-path: circle(50% at 50% 50%);
     background-color: wheat;
     margin:0px 10px 10px 0px;
-    z-index: 1;
+    z-index: 5;
 }
 
 .addBook::before{
@@ -217,5 +223,15 @@ h3{
     color:white;
 }
 
+.blur{
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    background-color: black;
+    opacity: 0;
+    z-index: 3;
+    filter: blur(5px);
+    pointer-events: none;
+}
 
 
