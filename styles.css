@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&display=swap');
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Press+Start+2P&display=swap');:root{
     --title-color:black;
     --button-color:black;
 }
@@ -8,7 +7,7 @@ html{
     position:relative;
 }
 *{
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Modern Antiqua', sans-serif;
 }
 body{
     margin:0;
@@ -40,6 +39,7 @@ header{
 h1{
     color:rgb(233, 218, 233);
      font-weight:920;
+     text-shadow: black 5px 5px 5px;
 }
 input[type = "checkbox"]{
     position: relative;
@@ -80,6 +80,8 @@ form{
     border-radius: 10px;
     box-shadow: black 2px 2px 2px;
     transform: scale(0);
+    font-size: 1.1em;
+    font-weight: 900;
 }
 label{
     font-size: 1.5em;
@@ -128,6 +130,8 @@ label{
     background-color: transparent;
     border:none;
     font-size: 4em;
+    font-family: 'sans-serif';
+    font-weight: lighter;
     transition: color 0.2s ease-in-out;
 }
 
@@ -145,7 +149,7 @@ label{
 .book{
     
     display:flex;
-    box-shadow: black 2px 2px 2px;
+    box-shadow: rgb(233, 197, 197) 4px 4px 4px;
     flex-flow: column nowrap;
     justify-content: space-around;
     align-items: center;
@@ -167,15 +171,20 @@ h3{
     font-size: 1.5em;
 }
 #addABookHeader{
-    color:rgb(66, 65, 61)
+    color:rgb(18, 46, 70);
+    font-size: 2.5em;
 }
 .cardButton{
     font-size: 1.7em;
+    line-height: 40px;
     text-align: center;
     width:150px;
     height:40px;
+    box-shadow: black 2px 2px 2px;
+    font-weight: 900;
     border-radius: 5px;
     position:relative;
+    padding: 0px 0px 25px 0px;
     z-index: 1;
 
 }
