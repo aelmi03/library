@@ -12,9 +12,8 @@ form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
 addButton.addEventListener("click", popUp);
 initializeStorageIfEmpty("Books");
-let library = JSON.parse(localStorage.getItem("Books"));
+const library = JSON.parse(localStorage.getItem("Books"));
 library.forEach(book => displayNewBook(book));
-console.log(library[0].hasRead);
 function initializeStorageIfEmpty(){
     if(localStorage.getItem("Books") == null){
         localStorage.setItem("Books", JSON.stringify([]));
