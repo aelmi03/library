@@ -69,7 +69,8 @@ form{
     justify-content: space-around;
     position: absolute;
     left: 50%;
-    top:120px;
+    top:50%;
+    margin-top: -250px;
     margin-left:-150px;
     z-index:4;
     width:300px;
