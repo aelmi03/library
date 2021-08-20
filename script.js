@@ -12,6 +12,10 @@ form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
 addButton.addEventListener("click", popUp);
 let library = [];
+for(let i = 0; i < 10; i++){
+    const coolio = new Book("LOL" + i,"HEY",123,false);
+    library.push(coolio);
+}
 library.forEach(book => displayNewBook(book));
 function checkIfAnyFieldIsEmpty(){
     if(titleTextArea.checkValidity() && authorTextArea.checkValidity() && pagesTextArea.checkValidity()){
@@ -20,7 +24,7 @@ function checkIfAnyFieldIsEmpty(){
     return true;
 }
 function getInformationFromForm(){
-    if(checkIfAnyFieldIsEmpty() === true){
+    if(checkIfAnyFieldIsEmpty() === true || containsTitle(titleTextArea.value)){
         warningText.style.cssText = "display: block";
        return;
     }  
@@ -51,6 +55,9 @@ function popUp(){
 function addBookToLibrary(title,author,pages,hasRead){
     const newBook = new Book(title,author,pages,hasRead);
     library.push(newBook);
+    localStorage.setItem("Books", JSON.stringify(library));
+    let coolData = JSON.parse(localStorage.getItem("Books"));
+    console.log(coolData[0]);
     displayNewBook(newBook);
     
 }
@@ -116,6 +123,14 @@ function findObjectFromBookDiv(div){
             return library[i];
         }
     }
+}
+function containsTitle(name){
+    for(let i =0; i < library.length; i++){
+        if(library[i].title === name){
+            return true;
+        }
+    }
+    return false;
 }
 function changeReadCheckBoxText(result){
     if(result === false){
