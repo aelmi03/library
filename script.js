@@ -11,12 +11,15 @@ const warningText = document.querySelector("p");
 form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
 addButton.addEventListener("click", popUp);
-let library = [];
-for(let i = 0; i < 10; i++){
-    const coolio = new Book("LOL" + i,"HEY",123,false);
-    library.push(coolio);
-}
+initializeStorageIfEmpty("Books");
+let library = JSON.parse(localStorage.getItem("Books"));
 library.forEach(book => displayNewBook(book));
+console.log(library[0].hasRead);
+function initializeStorageIfEmpty(){
+    if(localStorage.getItem("Books") == null){
+        localStorage.setItem("Books", JSON.stringify([]));
+    }
+}
 function checkIfAnyFieldIsEmpty(){
     if(titleTextArea.checkValidity() && authorTextArea.checkValidity() && pagesTextArea.checkValidity()){
         return false;
@@ -56,8 +59,6 @@ function addBookToLibrary(title,author,pages,hasRead){
     const newBook = new Book(title,author,pages,hasRead);
     library.push(newBook);
     localStorage.setItem("Books", JSON.stringify(library));
-    let coolData = JSON.parse(localStorage.getItem("Books"));
-    console.log(coolData[0]);
     displayNewBook(newBook);
     
 }
@@ -72,7 +73,7 @@ function displayNewBook(book){
     const pagesHeader = document.createElement("h3");
     pagesHeader.textContent = book.pages + " pages";
     const readButton = document.createElement("button");
-    readButton.textContent = changeReadCheckBoxText(hasReadCheckBox.checked);
+    readButton.textContent = changeReadCheckBoxText(book.hasRead);
     readButton.classList.add("cardButton");
     readButton.classList.add("read");
     const deleteButton = document.createElement("button");
@@ -101,6 +102,7 @@ function editBook(e){
         e.target.textContent = changeReadCheckBoxText(bookObject.hasRead);
        
     }
+    localStorage.setItem("Books", JSON.stringify(library));
 }
 function changeReadStaus(book){
     if(book.hasRead){
