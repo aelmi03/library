@@ -131,7 +131,7 @@ label{
     border:none;
     transition: color 0.2s ease-in-out;
     font-size: 6em;
-    font-family: monospace;
+    font-family: sans-serif;
 }
 
 .booksHolder{
@@ -187,9 +187,7 @@ h3{
     z-index: 1;
 
 }
-.submit{
-    transition: transform 2 ease-in-out;
-}
+
 .read::before{
     content: "";
     position: absolute;
