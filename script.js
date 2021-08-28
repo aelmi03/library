@@ -19,6 +19,20 @@ function initializeStorageIfEmpty(){
         localStorage.setItem("Books", JSON.stringify([]));
     }
 }
+class Book{
+    constructor(titleOfBook,authorOfBook,pagesOfBook,hasReadBook){
+        this.title = titleOfBook;
+        this.author = authorOfBook;
+        this.pages = pagesOfBook;
+        this.hasRead = hasReadBook;
+    }
+    info(){
+        const hasReadString = (this.hasRead)? "has read" :  "not read yet";
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${hasReadString}`;
+    }
+
+}
+
 function checkIfAnyFieldIsEmpty(){
     if(titleTextArea.checkValidity() && authorTextArea.checkValidity() && pagesTextArea.checkValidity()){
         return false;
@@ -139,13 +153,7 @@ function changeReadCheckBoxText(result){
     }
     return "Read";
 }
-function Book(title, author, pages, hasRead){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.hasRead = hasRead;
-    this.info = function(){
-        const hasReadString = (this.hasRead)? "has read" :  "not read yet";
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${hasReadString}`;
-    }
-}
+
+
+
+
