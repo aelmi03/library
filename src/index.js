@@ -15,6 +15,8 @@ import {
   getFirestore,
   query,
   getDocs,
+  setDoc,
+  doc,
 } from "firebase/firestore";
 const addButton = document.querySelector(`.addBook`);
 const titleTextArea = document.querySelector(`input[name = "title"]`);
@@ -29,13 +31,32 @@ const warningText = document.querySelector("p");
 form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
 addButton.addEventListener("click", popUp);
-initializeStorageIfEmpty("Books");
-const library = JSON.parse(localStorage.getItem("Books"));
-library.forEach((book) => displayNewBook(book));
+const firebaseConfig = {
+  apiKey: "AIzaSyDTcGl_vyPwYQnu8yPVZ-rHrmpoh0vrThQ",
+  authDomain: "library-c396e.firebaseapp.com",
+  projectId: "library-c396e",
+  storageBucket: "library-c396e.appspot.com",
+  messagingSenderId: "922191088626",
+  appId: "1:922191088626:web:1ba16140209fe82b33396b",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+initFirebaseAuth();
+initializeStorageIfEmpty();
+
+let library;
+initializeLibrary();
 function initializeStorageIfEmpty() {
   if (localStorage.getItem("Books") == null) {
     localStorage.setItem("Books", JSON.stringify([]));
   }
+}
+function initFirebaseAuth() {
+  onAuthStateChanged(getAuth(), (user) => console.log("auth changed", user));
+}
+function displayBooks() {
+  library.forEach((book) => displayNewBook(book));
 }
 class Book {
   constructor(titleOfBook, authorOfBook, pagesOfBook, hasReadBook) {
@@ -49,7 +70,21 @@ class Book {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${hasReadString}`;
   }
 }
-
+async function initializeLibrary() {
+  if (!getAuth().currentUser) {
+    console.log("USER NOT LOGGIN IN");
+    library = JSON.parse(localStorage.getItem("Books"));
+  } else {
+    console.log("LOGGGED INUSER ");
+    await loadBooksDB();
+  }
+  displayBooks();
+}
+async function loadBooksDB() {
+  const booksQuery = query(collection(getFirestore(), "books"));
+  const books = await getDocs(booksQuery);
+  books.docs.forEach((doc) => library.push(doc.data()));
+}
 function checkIfAnyFieldIsEmpty() {
   if (
     titleTextArea.checkValidity() &&
@@ -173,24 +208,3 @@ function changeReadCheckBoxText(result) {
   }
   return "Read";
 }
-const firebaseConfig = {
-  apiKey: "AIzaSyDTcGl_vyPwYQnu8yPVZ-rHrmpoh0vrThQ",
-  authDomain: "library-c396e.firebaseapp.com",
-  projectId: "library-c396e",
-  storageBucket: "library-c396e.appspot.com",
-  messagingSenderId: "922191088626",
-  appId: "1:922191088626:web:1ba16140209fe82b33396b",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-async function addDummyTask() {
-  const recentMessages = query(collection(getFirestore(), "testing"));
-  const q = await getDocs(recentMessages);
-  q.docs.forEach((doc) => console.log(doc.data()));
-  console.log("hello");
-  await addDoc(collection(getFirestore(), "testing"), {
-    name: "abdiladif",
-  });
-}
-addDummyTask();

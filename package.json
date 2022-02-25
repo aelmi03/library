@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "css-loader": "^6.6.0",
+    "dotenv": "^16.0.0",
+    "firebase": "^9.6.7",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch"
+  },
+  "main": "index.js"
+}
