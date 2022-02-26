@@ -116,9 +116,13 @@ label {
   background-color: rgb(255, 166, 0);
   margin: 0px 15px 15px 0px;
   z-index: 5;
-  font-size: 0.8rem;
 }
-
+.plus-sign {
+  font-size: 4.5rem;
+  color: #000;
+  display: block;
+  font-family: sans-serif;
+}
 .addBook::before {
   content: "";
   position: absolute;
@@ -137,7 +141,7 @@ label {
   transform: scale(1);
 }
 
-.addBook:hover .addButton {
+.addBook:hover .plus-sign {
   color: white;
 }
 
@@ -146,7 +150,6 @@ label {
   background-color: transparent;
   border: none;
   transition: color 0.2s ease-in-out;
-  font-size: 6em;
   font-family: sans-serif;
 }
 .header-button {
