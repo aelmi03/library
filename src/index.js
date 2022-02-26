@@ -21,6 +21,7 @@ import {
   onSnapshot,
   deleteDoc,
   updateDoc,
+  where,
 } from "firebase/firestore";
 import uniqid from "uniqid";
 const addButton = document.querySelector(`.addBook`);
@@ -107,7 +108,10 @@ async function initializeLibrary() {
   displayBooks();
 }
 async function loadBooksDB() {
-  const booksQuery = query(collection(getFirestore(), "books"));
+  const booksQuery = query(
+    collection(getFirestore(), "books"),
+    where("userId", "==", `${getAuth().currentUser.uid}`)
+  );
   onSnapshot(booksQuery, function (snapshot) {
     library = snapshot.docs.map((doc) => doc.data());
     displayBooks();
@@ -216,12 +220,7 @@ function displayNewBook(book) {
   bookDiv.addEventListener("click", editBook);
 }
 function removeFromDB(bookObject) {
-  const bookQuery = query(
-    collection(getFirestore(), "books"),
-    where("title", "==", `${bookObject.title}`)
-  );
-  doc(getFirestore(), "books");
-  deleteDoc(bookQuer);
+  deleteDoc(doc(getFirestore(), `books/${bookObject.bookID}`));
 }
 function editBook(e) {
   if (e.target.classList.contains("book")) return;
