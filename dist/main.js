@@ -33465,7 +33465,7 @@ const form = document.querySelector("form");
 const submitButton = document.querySelector("#submit");
 const booksHolder = document.querySelector(".booksHolder");
 submitButton.addEventListener("click", getInformationFromForm);
-const warningText = document.querySelector("p");
+const warningText = document.querySelector(".warning-text");
 form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
 const authButton = document.querySelector(".sign-up-or-login");
