@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/@firebase/auth/dist/esm2017/index-585b6059.js":
@@ -8,6 +7,7 @@
   \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "$": () => (/* binding */ sendPasswordResetEmail),
@@ -9452,6 +9452,7 @@ registerAuth("Browser" /* BROWSER */);
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActionCodeOperation": () => (/* reexport safe */ _index_585b6059_js__WEBPACK_IMPORTED_MODULE_0__.A),
@@ -9555,6 +9556,7 @@ __webpack_require__.r(__webpack_exports__);
   \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AbstractUserDataWriter": () => (/* binding */ xh),
@@ -28672,6 +28674,7 @@ function ul(t, e) {
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CONSTANTS": () => (/* binding */ CONSTANTS),
@@ -30642,6 +30645,7 @@ function getModularInstance(service) {
   \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ErrorCode": () => (/* binding */ ErrorCode),
@@ -30772,6 +30776,7 @@ var XhrIo = esm.XhrIo=X;
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -30798,6 +30803,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "html, body, div, span, object, iframe,
   \**************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -30830,6 +30836,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --title-color: black;\n  --
   \*****************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -30941,6 +30948,7 @@ module.exports = function (cssWithMappingToString) {
   \********************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (url, options) {
@@ -30979,6 +30987,7 @@ module.exports = function (url, options) {
   \************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (item) {
@@ -31010,6 +31019,7 @@ module.exports = function (item) {
   \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FirebaseError": () => (/* reexport safe */ _firebase_app__WEBPACK_IMPORTED_MODULE_0__.FirebaseError),
@@ -31066,6 +31076,7 @@ var version = "9.6.7";
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ActionCodeOperation": () => (/* reexport safe */ _firebase_auth__WEBPACK_IMPORTED_MODULE_0__.ActionCodeOperation),
@@ -31160,6 +31171,7 @@ __webpack_require__.r(__webpack_exports__);
   \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AbstractUserDataWriter": () => (/* reexport safe */ _firebase_firestore__WEBPACK_IMPORTED_MODULE_0__.AbstractUserDataWriter),
@@ -31257,6 +31269,7 @@ __webpack_require__.r(__webpack_exports__);
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -31311,6 +31324,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -31365,6 +31379,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -31478,6 +31493,7 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -31526,6 +31542,7 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -31546,6 +31563,7 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -31567,6 +31585,7 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -31646,6 +31665,7 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -31671,6 +31691,7 @@ module.exports = styleTagTransform;
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "__extends": () => (/* binding */ __extends),
@@ -31941,12 +31962,53 @@ function __classPrivateFieldSet(receiver, state, value, kind, f) {
 
 /***/ }),
 
+/***/ "./node_modules/uniqid/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/uniqid/index.js ***!
+  \**************************************/
+/***/ ((module) => {
+
+/* 
+(The MIT License)
+Copyright (c) 2014-2021 Halász Ádám <adam@aimform.com>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+//  Unique Hexatridecimal ID Generator
+// ================================================
+
+//  Dependencies
+// ================================================
+var pid = typeof process !== 'undefined' && process.pid ? process.pid.toString(36) : '' ;
+var address = '';
+if(false){ var i, networkInterfaces, mac, os; } 
+
+//  Exports
+// ================================================
+module.exports = module.exports["default"] = function(prefix, suffix){ return (prefix ? prefix : '') + address + pid + now().toString(36) + (suffix ? suffix : ''); }
+module.exports.process = function(prefix, suffix){ return (prefix ? prefix : '') + pid + now().toString(36) + (suffix ? suffix : ''); }
+module.exports.time    = function(prefix, suffix){ return (prefix ? prefix : '') + now().toString(36) + (suffix ? suffix : ''); }
+
+//  Helpers
+// ================================================
+function now(){
+    var time = Date.now();
+    var last = now.last || time;
+    return now.last = time > last ? time : last + 1;
+}
+
+
+/***/ }),
+
 /***/ "./src/library.jpg":
 /*!*************************!*\
   !*** ./src/library.jpg ***!
   \*************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 module.exports = __webpack_require__.p + "23a8fa158bd1fe17830e.jpg";
 
 /***/ }),
@@ -31957,6 +32019,7 @@ module.exports = __webpack_require__.p + "23a8fa158bd1fe17830e.jpg";
   \**************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "FirebaseError": () => (/* reexport safe */ _firebase_util__WEBPACK_IMPORTED_MODULE_2__.FirebaseError),
@@ -32585,6 +32648,7 @@ registerCoreComponents('');
   \********************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Component": () => (/* binding */ Component),
@@ -33011,6 +33075,7 @@ class ComponentContainer {
   \*****************************************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LogLevel": () => (/* binding */ LogLevel),
@@ -33371,8 +33436,9 @@ function setUserLogHandler(logCallback, options) {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
@@ -33382,6 +33448,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.esm.js");
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/index.esm.js");
 /* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/firestore */ "./node_modules/firebase/firestore/dist/index.esm.js");
+/* harmony import */ var uniqid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! uniqid */ "./node_modules/uniqid/index.js");
+/* harmony import */ var uniqid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(uniqid__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -33399,7 +33468,10 @@ submitButton.addEventListener("click", getInformationFromForm);
 const warningText = document.querySelector("p");
 form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
+const authButton = document.querySelector(".sign-up-or-login");
+authButton.addEventListener("click", changeAuthStatus);
 addButton.addEventListener("click", popUp);
+
 const firebaseConfig = {
   apiKey: "AIzaSyDTcGl_vyPwYQnu8yPVZ-rHrmpoh0vrThQ",
   authDomain: "library-c396e.firebaseapp.com",
@@ -33413,7 +33485,6 @@ const firebaseConfig = {
 const app = (0,firebase_app__WEBPACK_IMPORTED_MODULE_2__.initializeApp)(firebaseConfig);
 initFirebaseAuth();
 initializeStorageIfEmpty();
-
 let library;
 initializeLibrary();
 function initializeStorageIfEmpty() {
@@ -33422,9 +33493,26 @@ function initializeStorageIfEmpty() {
   }
 }
 function initFirebaseAuth() {
-  (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)(), (user) => console.log("auth changed", user));
+  (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.onAuthStateChanged)((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)(), handleAuthChanged);
+}
+function handleAuthChanged(user) {
+  if (user) {
+    authButton.textContent = "Sign Out";
+  } else {
+    authButton.textContent = "Log in";
+  }
+  initializeLibrary();
+}
+function changeAuthStatus() {
+  if (!(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)().currentUser) {
+    const provider = new firebase_auth__WEBPACK_IMPORTED_MODULE_3__.GoogleAuthProvider();
+    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.signInWithPopup)((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)(), provider);
+  } else {
+    (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.signOut)((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)());
+  }
 }
 function displayBooks() {
+  booksHolder.textContent = "";
   library.forEach((book) => displayNewBook(book));
 }
 class Book {
@@ -33440,9 +33528,11 @@ class Book {
   }
 }
 async function initializeLibrary() {
+  library = [];
   if (!(0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)().currentUser) {
     console.log("USER NOT LOGGIN IN");
     library = JSON.parse(localStorage.getItem("Books"));
+    displayBooks();
   } else {
     console.log("LOGGGED INUSER ");
     await loadBooksDB();
@@ -33451,8 +33541,28 @@ async function initializeLibrary() {
 }
 async function loadBooksDB() {
   const booksQuery = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.query)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.collection)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.getFirestore)(), "books"));
-  const books = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.getDocs)(booksQuery);
-  books.docs.forEach((doc) => library.push(doc.data()));
+  (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.onSnapshot)(booksQuery, function (snapshot) {
+    library = snapshot.docs.map((doc) => doc.data());
+    displayBooks();
+  });
+}
+async function addBookDB(title, author, pages, hasRead) {
+  const bookDoc = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.addDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.collection)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.getFirestore)(), `books`), {
+    title,
+    author,
+    pages,
+    hasRead,
+    userId: (0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)().currentUser.uid,
+  });
+  (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.updateDoc)(bookDoc, {
+    bookID: bookDoc.id,
+  });
+}
+async function changeReadStatusDB(bookObject) {
+  const bookDoc = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.doc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.getFirestore)(), "books", `${bookObject.bookID}`);
+  (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.updateDoc)(bookDoc, {
+    hasRead: !bookObject.hasRead,
+  });
 }
 function checkIfAnyFieldIsEmpty() {
   if (
@@ -33469,12 +33579,22 @@ function getInformationFromForm() {
     warningText.style.cssText = "display: block";
     return;
   }
-  addBookToLibrary(
-    titleTextArea.value,
-    authorTextArea.value,
-    pagesTextArea.value,
-    hasReadCheckBox.checked
-  );
+  if ((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)().currentUser) {
+    addBookDB(
+      titleTextArea.value,
+      authorTextArea.value,
+      pagesTextArea.value,
+      hasReadCheckBox.checked
+    );
+  } else {
+    addBookToLibrary(
+      titleTextArea.value,
+      authorTextArea.value,
+      pagesTextArea.value,
+      hasReadCheckBox.checked
+    );
+  }
+
   warningText.style.cssText = "display:none";
   form.style.cssText = "transform: scale(0)";
   blurs.style.cssText = "opacity: 0";
@@ -33528,18 +33648,35 @@ function displayNewBook(book) {
   booksHolder.appendChild(bookDiv);
   bookDiv.addEventListener("click", editBook);
 }
+function removeFromDB(bookObject) {
+  const bookQuery = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.query)(
+    (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.collection)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.getFirestore)(), "books"),
+    where("title", "==", `${bookObject.title}`)
+  );
+  (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.doc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.getFirestore)(), "books");
+  (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_4__.deleteDoc)(bookQuer);
+}
 function editBook(e) {
   if (e.target.classList.contains("book")) return;
   const parentDiv = e.target.parentNode;
   const bookObject = findObjectFromBookDiv(parentDiv);
   if (e.target.classList.contains("delete")) {
-    removeFromLibrary(bookObject);
-    e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+    if ((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)().currentUser) {
+      removeFromDB(bookObject);
+    } else {
+      removeFromLibrary(bookObject);
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      localStorage.setItem("Books", JSON.stringify(library));
+    }
   } else if (e.target.classList.contains("read")) {
-    changeReadStaus(bookObject);
-    e.target.textContent = changeReadCheckBoxText(bookObject.hasRead);
+    if ((0,firebase_auth__WEBPACK_IMPORTED_MODULE_3__.getAuth)().currentUser) {
+      changeReadStatusDB(bookObject);
+    } else {
+      changeReadStaus(bookObject);
+      e.target.textContent = changeReadCheckBoxText(bookObject.hasRead);
+      localStorage.setItem("Books", JSON.stringify(library));
+    }
   }
-  localStorage.setItem("Books", JSON.stringify(library));
 }
 function changeReadStaus(book) {
   if (book.hasRead) {

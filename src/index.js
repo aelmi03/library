@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   signOut,
   onAuthStateChanged,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import {
   collection,
@@ -17,7 +18,11 @@ import {
   getDocs,
   setDoc,
   doc,
+  onSnapshot,
+  deleteDoc,
+  updateDoc,
 } from "firebase/firestore";
+import uniqid from "uniqid";
 const addButton = document.querySelector(`.addBook`);
 const titleTextArea = document.querySelector(`input[name = "title"]`);
 const authorTextArea = document.querySelector(`input[name = "author"]`);
@@ -30,7 +35,10 @@ submitButton.addEventListener("click", getInformationFromForm);
 const warningText = document.querySelector("p");
 form.style.cssText = "transform:scale(0);";
 const blurs = document.querySelector(".blur");
+const authButton = document.querySelector(".sign-up-or-login");
+authButton.addEventListener("click", changeAuthStatus);
 addButton.addEventListener("click", popUp);
+
 const firebaseConfig = {
   apiKey: "AIzaSyDTcGl_vyPwYQnu8yPVZ-rHrmpoh0vrThQ",
   authDomain: "library-c396e.firebaseapp.com",
@@ -44,7 +52,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 initFirebaseAuth();
 initializeStorageIfEmpty();
-
 let library;
 initializeLibrary();
 function initializeStorageIfEmpty() {
@@ -53,9 +60,26 @@ function initializeStorageIfEmpty() {
   }
 }
 function initFirebaseAuth() {
-  onAuthStateChanged(getAuth(), (user) => console.log("auth changed", user));
+  onAuthStateChanged(getAuth(), handleAuthChanged);
+}
+function handleAuthChanged(user) {
+  if (user) {
+    authButton.textContent = "Sign Out";
+  } else {
+    authButton.textContent = "Log in";
+  }
+  initializeLibrary();
+}
+function changeAuthStatus() {
+  if (!getAuth().currentUser) {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(getAuth(), provider);
+  } else {
+    signOut(getAuth());
+  }
 }
 function displayBooks() {
+  booksHolder.textContent = "";
   library.forEach((book) => displayNewBook(book));
 }
 class Book {
@@ -71,9 +95,11 @@ class Book {
   }
 }
 async function initializeLibrary() {
+  library = [];
   if (!getAuth().currentUser) {
     console.log("USER NOT LOGGIN IN");
     library = JSON.parse(localStorage.getItem("Books"));
+    displayBooks();
   } else {
     console.log("LOGGGED INUSER ");
     await loadBooksDB();
@@ -82,8 +108,28 @@ async function initializeLibrary() {
 }
 async function loadBooksDB() {
   const booksQuery = query(collection(getFirestore(), "books"));
-  const books = await getDocs(booksQuery);
-  books.docs.forEach((doc) => library.push(doc.data()));
+  onSnapshot(booksQuery, function (snapshot) {
+    library = snapshot.docs.map((doc) => doc.data());
+    displayBooks();
+  });
+}
+async function addBookDB(title, author, pages, hasRead) {
+  const bookDoc = await addDoc(collection(getFirestore(), `books`), {
+    title,
+    author,
+    pages,
+    hasRead,
+    userId: getAuth().currentUser.uid,
+  });
+  updateDoc(bookDoc, {
+    bookID: bookDoc.id,
+  });
+}
+async function changeReadStatusDB(bookObject) {
+  const bookDoc = doc(getFirestore(), "books", `${bookObject.bookID}`);
+  updateDoc(bookDoc, {
+    hasRead: !bookObject.hasRead,
+  });
 }
 function checkIfAnyFieldIsEmpty() {
   if (
@@ -100,12 +146,22 @@ function getInformationFromForm() {
     warningText.style.cssText = "display: block";
     return;
   }
-  addBookToLibrary(
-    titleTextArea.value,
-    authorTextArea.value,
-    pagesTextArea.value,
-    hasReadCheckBox.checked
-  );
+  if (getAuth().currentUser) {
+    addBookDB(
+      titleTextArea.value,
+      authorTextArea.value,
+      pagesTextArea.value,
+      hasReadCheckBox.checked
+    );
+  } else {
+    addBookToLibrary(
+      titleTextArea.value,
+      authorTextArea.value,
+      pagesTextArea.value,
+      hasReadCheckBox.checked
+    );
+  }
+
   warningText.style.cssText = "display:none";
   form.style.cssText = "transform: scale(0)";
   blurs.style.cssText = "opacity: 0";
@@ -159,18 +215,35 @@ function displayNewBook(book) {
   booksHolder.appendChild(bookDiv);
   bookDiv.addEventListener("click", editBook);
 }
+function removeFromDB(bookObject) {
+  const bookQuery = query(
+    collection(getFirestore(), "books"),
+    where("title", "==", `${bookObject.title}`)
+  );
+  doc(getFirestore(), "books");
+  deleteDoc(bookQuer);
+}
 function editBook(e) {
   if (e.target.classList.contains("book")) return;
   const parentDiv = e.target.parentNode;
   const bookObject = findObjectFromBookDiv(parentDiv);
   if (e.target.classList.contains("delete")) {
-    removeFromLibrary(bookObject);
-    e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+    if (getAuth().currentUser) {
+      removeFromDB(bookObject);
+    } else {
+      removeFromLibrary(bookObject);
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+      localStorage.setItem("Books", JSON.stringify(library));
+    }
   } else if (e.target.classList.contains("read")) {
-    changeReadStaus(bookObject);
-    e.target.textContent = changeReadCheckBoxText(bookObject.hasRead);
+    if (getAuth().currentUser) {
+      changeReadStatusDB(bookObject);
+    } else {
+      changeReadStaus(bookObject);
+      e.target.textContent = changeReadCheckBoxText(bookObject.hasRead);
+      localStorage.setItem("Books", JSON.stringify(library));
+    }
   }
-  localStorage.setItem("Books", JSON.stringify(library));
 }
 function changeReadStaus(book) {
   if (book.hasRead) {
